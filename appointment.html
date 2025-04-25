@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Book Appointment · Hospital Queue</title>
+  <link rel="stylesheet" href="gg.css"/>
+</head>
+<body>
+  <div class="bg"><span></span><span></span></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="brand">Hospital Queue</div>
+    <nav>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="patient .html" class="active">Notifications</a></li>
+        <li><a href="index.html" class="active">First Pages</a></li>
+        <li><a href="index.html" class="active">First Pages</a></li>
+
+        
+        
+          
+        </div>
+    </nav>
+  </header>
+
+  <!-- ===== Filters + Grid ===== -->
+  <main>
+    <!-- Filter sidebar -->
+    <aside class="filter">
+      <h2>Select a Disease / Specialty</h2>
+      <select id="spec">
+        <option value="all">All</option>
+        <option value="Surgery">Surgery</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Orthopaedic">Orthopaedic</option>
+        <option value="Dermatology">Dermatology</option>
+        <option value="ETN">ETN</option>
+        <option value="Pediatrics">Pediatrics</option>
+      </select>
+
+      <h2 style="margin-top:2rem">Search</h2>
+      <input type="text" id="search" placeholder="Doctor, city, specialty">
+    </aside>
+
+    <!-- Doctors grid -->
+    <section id="grid" class="grid">
+      <!-- doctor cards injected by JS -->
+    </section>
+  </main>
+
+  <script>
+    /* ===== Doctor DATA (no img field) ===== */
+    const doctors = [
+      {name:"Dr. Ali Khan",   city:"Karachi",     spec:"Cardiology",   slot:"24 Apr • 10:15 AM"},
+      {name:"Dr. Sana Malik", city:"Lahore",      spec:"Dermatology",  slot:"24 Apr • 11:00 AM"},
+      {name:"Dr. Usman Tariq",city:"Islamabad",   spec:"Neurology",    slot:"24 Apr • 09:45 AM"},
+      {name:"Dr. Hira Saeed", city:"Peshawar",    spec:"Pediatrics",   slot:"24 Apr • 12:00 PM"},
+      {name:"Dr. Ahmed Shah", city:"Multan",      spec:"Surgery",      slot:"24 Apr • 02:00 PM"},
+      {name:"Dr. Hassan Rizvi",city:"Quetta",     spec:"Orthopaedic",  slot:"24 Apr • 01:30 PM"},
+      {name:"Dr. Ayesha Noor",city:"Sukkur",      spec:"Dermatology",  slot:"24 Apr • 03:00 PM"},
+      {name:"Dr. Talha Zubair",city:"Karachi",    spec:"ETN",          slot:"24 Apr • 11:45 AM"},
+      {name:"Dr. Maria Zia",  city:"Lahore",      spec:"Cardiology",   slot:"24 Apr • 04:00 PM"},
+      {name:"Dr. Irfan Hashmi",city:"Rawalpindi", spec:"Neurology",    slot:"24 Apr • 02:45 PM"},
+      {name:"Dr. Maha Saqib", city:"Hyderabad",   spec:"Pediatrics",   slot:"24 Apr • 01:15 PM"},
+      {name:"Dr. Noman Shahid",city:"Sialkot",    spec:"Orthopaedic",  slot:"24 Apr • 03:30 PM"},
+      {name:"Dr. Zainab Khalid",city:"Abbottabad",spec:"Dermatology",  slot:"24 Apr • 12:30 PM"},
+      {name:"Dr. Rabia Imran",city:"Faisalabad",  spec:"Surgery",      slot:"24 Apr • 10:45 AM"}
+    ];
+    
+    /* ===== Build cards ===== */
+    const grid = document.getElementById('grid');
+    function makeCard(d){
+      const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(d.name)}&size=300&background=0D6EFD&color=fff`;
+      return `
+      <article class="card" data-spec="${d.spec}" data-search="${(d.name+d.city+d.spec).toLowerCase()}">
+        <img src="${avatar}" alt="${d.name}">
+        <span class="badge">${d.spec}</span>
+        <span class="slot">${d.slot}</span>
+        <h3>${d.name}</h3><p class="city">${d.city}</p>
+        <a href="#" class="btn">Book</a>
+      </article>`;
+    }
+    grid.innerHTML = doctors.map(makeCard).join('');
+    
+    /* ===== Filtering ===== */
+    const specSelect = document.getElementById('spec');
+    const searchInput = document.getElementById('search');
+    function filter(){
+      const spec = specSelect.value;
+      const q = searchInput.value.trim().toLowerCase();
+      document.querySelectorAll('#grid .card').forEach(c=>{
+        const matchSpec = (spec==='all') || c.dataset.spec===spec;
+        const matchText = c.dataset.search.includes(q);
+        c.style.display = (matchSpec && matchText)?'block':'none';
+      });
+    }
+    specSelect.onchange = filter;
+    searchInput.oninput = filter;
+
+    /* ===== Booking Confirmation Alert ===== */
+    grid.addEventListener('click', e => {
+      if (e.target.classList.contains('btn')) {
+        e.preventDefault();
+        const card = e.target.closest('.card');
+        const name = card.querySelector('h3').innerText;
+        const slot = card.querySelector('.slot').innerText;
+        const token = Math.floor(1000 + Math.random() * 9000); // 4-digit token
+
+        alert(`✅ Appointment Confirmed!\nDoctor: ${name}\nTime: ${slot}\nYour Token: #${token}`);
+      }
+    });
+  </script>
+</body>
+</html>
