@@ -1,0 +1,165 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #8e44ad, #3498db, #1abc9c);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  header .brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  header .main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  header .main-nav ul li {
+    list-style: none;
+  }
+  
+  header .main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  header .main-nav a:hover {
+    color: #ffd700;
+  }
+  
+  header .main-nav a.active {
+    color: #ffd700;
+  }
+  
+  /* Main Content */
+  main {
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 5rem;
+  }
+  
+  .notifications {
+    padding: 2rem 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    padding: 0.8rem;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .search-bar input:focus {
+    border-color: #3498db;
+  }
+  
+  /* Notification Cards */
+  .notification-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .notification-card h3 {
+    font-size: 1.5rem;
+    color: #3498db;
+  }
+  
+  .notification-card p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+  
+  .notification-card .status {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    color: #fff;
+  }
+  
+  /* Status Colors */
+  .notification-card.confirmed {
+    background: linear-gradient(to right, #8e44ad, #3498db, #1abc9c);
+  }
+  
+  .notification-card.pending {
+    background-color: #f39c12;
+  }
+  
+  .notification-card.available {
+    background-color: #2ecc71;
+  }
+  
+  .notification-card .status.confirmed {
+    background-color: #2ecc71;
+  }
+  
+  .notification-card .status.pending {
+    background-color: #f39c12;
+  }
+  
+  .notification-card .status.available {
+    background-color: #3498db;
+  }
+  
+  /* Footer */
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(to right, #8e44ad, #3498db, #1abc9c);
+    color: #fff;
+  }
+  
