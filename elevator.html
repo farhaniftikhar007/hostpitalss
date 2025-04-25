@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Elevator Pitch · Hospital Queue</title>
+  <link rel="stylesheet" href="w.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+  <!-- background blobs -->
+  <div class="bg"><span></span><span></span><span></span></div>
+
+  <!-- Nav -->
+  <header>
+    <div class="brand">Hospital Queue</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a class="active" href="elevator-pitch.html">Elevator Pitch</a>
+      <a href="problem.html">Contact</a>
+      <li><a href="index.html" class="active">First Pages</a></li>
+
+    </nav>
+    
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <div class="content">
+      <h1>Watch our 60‑second Elevator Pitch</h1>
+      <p class="sub">
+        See how Hospital Queue eliminates waiting‑room chaos with one tap.
+      </p>
+
+      <!-- thumbnail -->
+      <div class="thumb" id="openVideo">
+        <img src="imgs/pitch-thumb.jpg" alt="Elevator pitch thumbnail">
+        <span class="play"></span>
+      </div>
+
+      <div class="cta">
+        <button id="openVideoBtn" class="btn">Play Video</button>
+        <a href="docs/onepager.pdf" class="btn-ghost" target="_blank">Download One‑Pager</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-body">
+      <button class="close" id="closeModal">&times;</button>
+      <!-- replace src with your own link -->
+      <iframe id="video" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+              title="Elevator Pitch" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+<script>
+/* simple modal handler */
+const modal=document.getElementById('modal'),
+      video=document.getElementById('video'),
+      openers=[document.getElementById('openVideo'),document.getElementById('openVideoBtn')],
+      close=document.getElementById('closeModal');
+openers.forEach(el=>el.addEventListener('click',()=>modal.classList.add('show')));
+close.onclick=()=>hide(); window.onclick=e=>{if(e.target===modal) hide();};
+function hide(){modal.classList.remove('show'); video.src=video.src;}
+</script>
+</body>
+</html>
