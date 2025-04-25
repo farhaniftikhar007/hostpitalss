@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Storyboard · Hospital Queue</title>
+  <link rel="stylesheet" href="q.css">
+</head>
+<body>
+  <!-- background blobs -->
+  <div class="bg"><span></span><span></span></div>
+
+  <!-- ===== Nav Bar ===== -->
+  <header>
+    <div class="brand">Hospital Queue</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="storyboard.html">Storyboard</a></li>
+        <li><a href="appointment.html">Book</a></li>
+        <li><a href="elevator.html">Elevator Pitch</a></li>
+        <li><a href="index.html" class="active">First Pages</a></li>
+
+        
+      </ul>
+     
+    </nav>
+  </header>
+
+  <!-- ===== Single‑scene storyboard ===== -->
+  <main class="board">
+    <h1>Storyboard Scene</h1>
+
+    <figure class="big-frame" id="frame">
+      <input type="file" hidden accept="image/*">
+      <img id="scene-img" src="storyboard (2).png" alt="Storyboard scene">
+      <figcaption id="caption">Double‑click to edit caption</figcaption>
+    </figure>
+<!-- Add this line below the <p class="hint"> -->
+  <a href="https://www.canva.com/design/DAGloldfaUI/qwl354DR45r5ZlH-sO0SFQ/edit?utm_content=DAGloldfaUI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+  target="_blank" 
+  style="display:inline-block;margin-top:1rem;padding:0.6rem 1.2rem;background:#ffc107;color:#000;text-decoration:none;border-radius:8px;font-weight:600;">
+ View Full Storyboard
+</a>
+
+    <p class="hint">Click or drag an image onto the frame to replace.</p>
+  </main>
+
+<script>
+const frame=document.getElementById('frame'),
+      fileInput=frame.querySelector('input'),
+      img=document.getElementById('scene-img'),
+      cap=document.getElementById('caption');
+
+frame.onclick=e=>{ if(e.target!==cap) fileInput.click(); };
+fileInput.onchange=e=>preview(e.target.files[0]);
+
+['dragover','dragenter'].forEach(ev=>
+  frame.addEventListener(ev,e=>{e.preventDefault();frame.classList.add('hover');}));
+['dragleave','drop'].forEach(ev=>
+  frame.addEventListener(ev,e=>{e.preventDefault();frame.classList.remove('hover');}));
+frame.addEventListener('drop',e=>preview(e.dataTransfer.files[0]));
+
+cap.ondblclick=()=>cap.setAttribute('contenteditable',true);
+cap.onblur   =()=>cap.removeAttribute('contenteditable');
+
+function preview(file){
+  if(!file) return;
+  const r=new FileReader();
+  r.onload=e=>img.src=e.target.result;
+  r.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
