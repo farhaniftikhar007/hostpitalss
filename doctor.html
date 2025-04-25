@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Patient Check-In Confirmation - Hospital Queue</title>
+    <link rel="stylesheet" href="doctor.css" />
+</head>
+<body>
+    <!-- Header with professional navbar -->
+    <header>
+        <div class="brand">Hospital Queue</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html" class="active">First Pages</a></li>
+
+            </ul>
+          
+        </nav>
+    </header>
+
+    <!-- Main content: Check-In Confirmation -->
+    <main class="checkin-success">
+        <section class="header-banner">
+            <h1>Check-In Successful!</h1>
+            <p>Welcome, your check-in has been completed. Your doctor is ready for consultation.</p>
+        </section>
+
+        <section class="patient-info">
+            <h2>Patient Details</h2>
+            <p><strong>Name:</strong> AMMAR KHAN</p>
+            <p><strong>Patient ID:</strong> 123456789</p>
+            <p class="status">Status: <span class="status-arrived">Checked In</span></p>
+        </section>
+
+        <section class="doctor-info">
+            <h2>Doctor's Details</h2>
+            <p><strong>Doctor Name:</strong> Dr.Noman khan</p>
+            <p><strong>Specialization:</strong> General Medicine</p>
+            <p class="status">Doctor's Status: <span class="status-arrived">Available for consultation</span></p>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="payment-section">
+            <h3>Payment:</h3>
+            <p class="payment-status">Payment status: Pending</p>
+            <button class="btn-payment" onclick="showPaymentMessage()">Make Payment</button>
+            <p class="payment-message" id="paymentMessage" style="display:none;">Payment Successful! Proceed to Exit.</p>
+        </section>
+
+        <!-- Exit Section -->
+        <section class="exit-section" id="exitSection" style="display:none;">
+            <button class="btn-exit" onclick="exitPage()">Exit</button>
+        </section>
+    </main>
+
+
+
+    <script>
+        // Function to show payment message and reveal exit button
+        function showPaymentMessage() {
+            document.getElementById('paymentMessage').style.display = 'block';
+            document.getElementById('exitSection').style.display = 'block';
+        }
+
+        // Function to simulate the exit process
+        function exitPage() {
+            alert('Thank you for visiting! You have exited the system.');
+            window.location.href = 'home.html'; // Redirecting to Home Page
+        }
+    </script>
+</body>
+</html>
