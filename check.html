@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Patient Arrival & Check-In - Hospital Queue</title>
+    <link rel="stylesheet" href="check.css" />
+</head>
+<body>
+    <!-- Header with professional navbar -->
+    <header>
+        <div class="brand">Hospital Queue</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+                <li><a href="doctor.html">Doctor</a></li>
+                <li><a href="index.html" class="active">First Pages</a></li>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content: Arrival & Check-In -->
+    <main class="patient-checkin">
+        <section class="header-banner">
+            <h1>Welcome to the Hospital Queue</h1>
+            <p>Experience seamless check-in and avoid standing in long queues.</p>
+        </section>
+
+        <section class="patient-info">
+            <h2>Patient Check-In</h2>
+            <p>Please provide your details to check-in and proceed.</p>
+            <form action="doctor.html" method="GET">
+                <label for="patient-name">Full Name:</label>
+                <input type="text" id="patient-name" name="name" required placeholder="Enter your full name" />
+
+                <label for="patient-id">Patient ID:</label>
+                <input type="text" id="patient-id" name="id" required placeholder="Enter your patient ID" />
+
+                <button type="submit" class="btn">Check-In</button>
+            </form>
+        </section>
+
+        <!-- Patient Status Section -->
+        <section class="status-section">
+            <h3>Status: </h3>
+            <p class="status">Patient is not checked in yet.</p>
+            <button class="btn-checkin-status">Check Status</button>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="payment-section">
+            <h3>Payment:</h3>
+            <p class="payment-status">Payment status: Pending</p>
+            <button class="btn-payment">Pay Now</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hospital Queue. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
