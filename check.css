@@ -1,0 +1,166 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #6610f2 0%, #0d6efd 60%, #6f42c1 100%);
+    color: #fff;
+}
+
+header .brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header .main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+header .main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header .main-nav a:hover {
+    color: #ffd700;
+}
+
+/* Buttons for Login/Sign Up */
+.auth-buttons a {
+    margin-left: 1rem;
+    padding: 8px 15px;
+    background-color: #ffd700;
+    color: #333;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons a:hover {
+    background-color: #e6b800;
+}
+
+/* Main content (patient check-in section) */
+.patient-checkin {
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-banner {
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #6610f2 0%, #0d6efd 60%, #6f42c1 100%);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.header-banner h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.header-banner p {
+    font-size: 18px;
+}
+
+/* Patient Check-in form */
+.patient-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-info label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.patient-info input {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.patient-info button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #6610f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.patient-info button:hover {
+    background-color: #0d6efd;
+}
+
+/* Status and payment sections */
+.status-section, .payment-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.status {
+    font-size: 18px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+.payment-status {
+    font-size: 18px;
+    font-weight: 600;
+    color: #dc3545;
+}
+
+.btn-payment {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6610f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-payment:hover {
+    background-color: #0d6efd;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #6610f2;
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+}
