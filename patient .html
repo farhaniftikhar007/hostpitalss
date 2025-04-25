@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patient Notifications - Hospital Queue</title>
+  <link rel="stylesheet" href="pat.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand">Hospital Queue</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="check.html">Patient</a></li>
+        <li><a href="index.html" class="active">First Pages</a></li>
+
+       
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Notifications Section -->
+  <main>
+    <section class="notifications">
+      <h1>Patient Notifications</h1>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by Patient or Doctor Name" onkeyup="searchNotifications()" />
+      </div>
+
+      <div class="notification-card confirmed">
+        <div class="notification-content">
+          <h3>Dr. Ali Khan - Cardiology</h3>
+          <p>Patient: John Doe. Appointment confirmed for 25th April at 10:15 AM.</p>
+        </div>
+        <span class="status confirmed">Confirmed</span>
+      </div>
+
+      <div class="notification-card pending">
+        <div class="notification-content">
+          <h3>Dr. Sana Malik - Dermatology</h3>
+          <p>Patient: Sarah Lee. Appointment pending for confirmation.</p>
+        </div>
+        <span class="status pending">Pending</span>
+      </div>
+
+      <div class="notification-card available">
+        <div class="notification-content">
+          <h3>Dr. Usman Tariq - Neurology</h3>
+          <p>Patient: Adam Smith. Slot available at 11:00 AM on 24th April. Book now!</p>
+        </div>
+        <span class="status available">Available</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hospital Queue. All Rights Reserved.</p>
+  </footer>
+
+  <script src="search.js">
+  function searchNotifications() {
+    var input, filter, cards, card, title, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase(); // Convert search term to uppercase for case-insensitive search
+    cards = document.getElementsByClassName('notification-card'); // Get all notification cards
+  
+    for (var i = 0; i < cards.length; i++) {
+      card = cards[i];
+      title = card.getElementsByClassName("doctor-name")[0]; // We are specifically looking for the doctor name inside h3
+      txtValue = title.textContent || title.innerText; // Get text content of the doctor's name
+  
+      // If doctor's name contains the search term, display the notification, otherwise hide it
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        card.style.display = ""; // Show notification
+      } else {
+        card.style.display = "none"; // Hide notification
+      }
+    }
+  }
+</script>
+</body>
+</html>
