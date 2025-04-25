@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Login · Hospital Queue</title>
+  <title>Login · Hospital Queue</title>
   <link rel="stylesheet" href="LOGIN.CSS" />
 </head>
 <body>
@@ -12,10 +12,10 @@
   </div>
 
   <main class="card">
-    <h1 class="brand">Hospital Queue</h1>
-    <h2>Welcome back</h2>
+    <h1 class="brand">Hospital Queue</h1>
+    <h2>Welcome back</h2>
 
-    <form action="home.html" method="GET" novalidate>
+    <form id="loginForm" action="home.html" method="GET">
       <label>Email
         <input type="email" name="email" required placeholder="you@example.com" />
       </label>
@@ -24,7 +24,7 @@
         <input type="password" name="password" required minlength="6" placeholder="••••••" />
       </label>
 
-      <button class="btn" type="submit">Sign in</button>
+      <button class="btn" type="submit">Sign in</button>
     </form>
 
     <p class="switch">
@@ -32,5 +32,14 @@
       <a href="signup.html">Create an account →</a>
     </p>
   </main>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      if (!this.checkValidity()) {
+        e.preventDefault(); // stops the form if invalid
+        this.reportValidity(); // shows the native browser errors
+      }
+    });
+  </script>
 </body>
 </html>
