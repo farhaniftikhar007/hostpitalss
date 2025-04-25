@@ -1,68 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hospital Queue · Portal</title>
-<link rel="stylesheet" href="https://unpkg.com/phosphor-icons@2.0.3/src/css/phosphor.min.css">
-<link rel="stylesheet" href="cv.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Login · Hospital Queue</title>
+  <link rel="stylesheet" href="LOGIN.CSS" />
 </head>
 <body>
-  <!-- decorative bg blobs -->
-  <div class="bg"><span></span><span></span><span></span></div>
+  <div class="bg‑decor">
+    <span></span><span></span><span></span>
+  </div>
 
-  <h1>Welcome to <em>Hospital Queue</em></h1>
-  <p class="tag">Choose where you’d like to go</p>
+  <main class="card">
+    <h1 class="brand">Hospital Queue</h1>
+    <h2>Welcome back</h2>
 
-  <section class="grid">
-   
-   
-    <a class="tile" href="SIGNUP.HTML">
-      <i class="ph-play-circle"></i>SIGNUP
-    </a>
+    <form id="loginForm" action="home.html" method="GET">
+      <label>Email
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </label>
 
-    <a class="tile" href="LOGIN.HTML">
-      <i class="ph-film-strip"></i>Login
-    </a>
+      <label>Password
+        <input type="password" name="password" required minlength="6" placeholder="••••••" />
+      </label>
 
-    <a class="tile" href="home.html">
-      <i class="ph-user-plus"></i>Home
-    </a>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
 
-    <a class="tile" href="appointment.html">
-      <i class="ph-calendar-check"></i>Book Appointment
-    </a>
-    <a class="tile" href="soryboard.html">
-      <i class="ph-stethoscope"></i>Storyboard
-    </a>
+    <p class="switch">
+      New here?
+      <a href="SIGNUP.HTML">Create an account →</a>
+    </p>
+  </main>
 
-    <a class="tile" href="elevator.html">
-      <i class="ph-question"></i>Elevator
-    </a>
-
-    <a class="tile" href="problem.html">
-      <i class="ph-sign-in"></i>Problem
-    </a>
-   
-
-    <a class="tile" href="contact.html">
-      <i class="ph-phone-call"></i>Contact Us
-    </a>
-   
-    <a class="tile" href="patient .html">
-      <i class="ph-phone-call"></i>Notifications
-    </a>
-    <a class="tile" href="check.html">
-      <i class="ph-phone-call"></i>Check
-    </a>
-    <a class="tile" href="doctor.html">
-      <i class="ph-phone-call"></i>Doctor
-    </a>
-    
-   
-   
-  </section>
-
-  
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      if (!this.checkValidity()) {
+        e.preventDefault(); // stops the form if invalid
+        this.reportValidity(); // shows the native browser errors
+      }
+    });
+  </script>
 </body>
 </html>
