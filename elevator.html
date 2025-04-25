@@ -6,6 +6,23 @@
   <title>Elevator Pitch · Hospital Queue</title>
   <link rel="stylesheet" href="w.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    main.hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .cta {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- background blobs -->
@@ -17,15 +34,13 @@
     <nav>
       <a href="home.html">Home</a>
       <a class="active" href="elevator-pitch.html">Elevator Pitch</a>
-      <a href="problem.html">Contact</a>
+      <a href="soryboard.html">Storyboard</a>
+      <a href="problem.html">Problem</a>
       <li><a href="index.html" class="active">First Pages</a></li>
-
     </nav>
-    
-    </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section with Video -->
   <main class="hero">
     <div class="content">
       <h1>Watch our 60‑second Elevator Pitch</h1>
@@ -33,38 +48,20 @@
         See how Hospital Queue eliminates waiting‑room chaos with one tap.
       </p>
 
-      <!-- thumbnail -->
-      <div class="thumb" id="openVideo">
-        <img src="imgs/pitch-thumb.jpg" alt="Elevator pitch thumbnail">
-        <span class="play"></span>
-      </div>
+      <!-- Canva Video Embed -->
+      <iframe 
+        src="https://www.canva.com/design/DAGlqkkVDQ0/DYq0IDTahLWj-W-qb_j5XA/view?embed" 
+        allowfullscreen 
+        allow="autoplay">
+      </iframe>
 
       <div class="cta">
-        <button id="openVideoBtn" class="btn">Play Video</button>
-        <a href="docs/onepager.pdf" class="btn-ghost" target="_blank">Download One‑Pager</a>
+        <a href="" class="btn-ghost" target="_blank">Download One‑Pager</a>
+        <a href="https://www.canva.com/design/DAGlqkkVDQ0/DYq0IDTahLWj-W-qb_j5XA/edit?utm_content=DAGlqkkVDQ0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+           class="btn-ghost" target="_blank">Open in Canva</a>
       </div>
     </div>
   </main>
 
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-body">
-      <button class="close" id="closeModal">&times;</button>
-      <!-- replace src with your own link -->
-      <iframe id="video" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-              title="Elevator Pitch" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </div>
-
-<script>
-/* simple modal handler */
-const modal=document.getElementById('modal'),
-      video=document.getElementById('video'),
-      openers=[document.getElementById('openVideo'),document.getElementById('openVideoBtn')],
-      close=document.getElementById('closeModal');
-openers.forEach(el=>el.addEventListener('click',()=>modal.classList.add('show')));
-close.onclick=()=>hide(); window.onclick=e=>{if(e.target===modal) hide();};
-function hide(){modal.classList.remove('show'); video.src=video.src;}
-</script>
 </body>
 </html>
