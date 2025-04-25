@@ -1,0 +1,159 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #6610f2 0%, #0d6efd 60%, #6f42c1 100%);
+    color: #fff;
+}
+
+header .brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header .main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+header .main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header .main-nav a:hover {
+    color: #ffd700;
+}
+
+/* Patient and Doctor Details */
+.checkin-success {
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-banner {
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #6610f2 0%, #0d6efd 60%, #6f42c1 100%);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.header-banner h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.header-banner p {
+    font-size: 18px;
+}
+
+/* Patient Info Section */
+.patient-info, .doctor-info {
+    margin-top: 20px;
+}
+
+.patient-info p, .doctor-info p {
+    font-size: 18px;
+}
+
+.status {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.status-arrived {
+    color: #28a745;
+}
+
+/* Payment Section */
+.payment-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.payment-status {
+    font-size: 18px;
+    font-weight: 600;
+    color: #dc3545;
+}
+
+.btn-payment {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #6610f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-payment:hover {
+    background-color: #0d6efd;
+}
+
+.payment-message {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Exit Section */
+.exit-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-exit {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-exit:hover {
+    background-color: #c82333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #6610f2;
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+}
